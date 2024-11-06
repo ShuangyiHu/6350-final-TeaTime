@@ -1,0 +1,79 @@
+# Flutter related files
+.flutter/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.dart_tool/
+.vscode/
+.idea/
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+
+# iOS related files
+ios/Flutter/.last_build_id
+ios/.generated/
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/ServiceDefinitions.json
+ios/Podfile.lock
+ios/Pods/
+ios/Runner.xcworkspace/
+
+# Android related files
+android/.gradle/
+android/app/*.keystore
+android/app/google-services.json
+android/key.properties
+android/local.properties
+
+# macOS related files
+macos/Flutter/ephemeral/
+
+# Web related files
+web/manifest.json
+web/.last_build_id
+
+# Linux related files
+linux/flutter/ephemeral/
+
+# Windows related files
+windows/flutter/ephemeral/
+
+# Generated plugin registrant file
+**/GeneratedPluginRegistrant.*
+
+# IntelliJ related files
+*.iml
+.idea/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# VS Code related files
+.vscode/
+
+# Misc
+*.lock
+*.log
+.DS_Store
+*.pdb
+*.obj
+*.dll
+*.exe
+*.app
+*.ipa
+*.jar
+*.war
+*.swp
+*.zip
+*.tar.gz
+*.bak
+*.tmp
