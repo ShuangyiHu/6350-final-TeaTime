@@ -127,46 +127,46 @@ class TeaSettingsCard extends StatelessWidget {
                             ),
                             spacerWidget,
                             // Brew ratio
-                            Selector<AppProvider, bool>(
-                              selector: (_, provider) => provider.useBrewRatios,
-                              builder: (context, useBrewRatios, child) =>
-                                  Visibility(
-                                visible: useBrewRatios,
-                                child: Align(
-                                  alignment: Alignment.centerRight,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      _teaBrewRatioSelector(context),
-                                      smallSpacerWidget,
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
+                            // Selector<AppProvider, bool>(
+                            //   selector: (_, provider) => provider.useBrewRatios,
+                            //   builder: (context, useBrewRatios, child) =>
+                            //       Visibility(
+                            //     visible: useBrewRatios,
+                            //     child: Align(
+                            //       alignment: Alignment.centerRight,
+                            //       child: Row(
+                            //         mainAxisSize: MainAxisSize.min,
+                            //         children: [
+                            //           _teaBrewRatioSelector(context),
+                            //           smallSpacerWidget,
+                            //         ],
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                             // Tea color selection - default layout
-                            Selector<AppProvider, bool>(
-                              selector: (_, provider) => provider.useBrewRatios,
-                              builder: (context, useBrewRatios, child) =>
-                                  Visibility(
-                                visible: !useBrewRatios,
-                                child: Align(
-                                  alignment: Alignment.centerRight,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      _teaColorSelector(context),
-                                      smallSpacerWidget,
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
+                            // Selector<AppProvider, bool>(
+                            //   selector: (_, provider) => provider.useBrewRatios,
+                            //   builder: (context, useBrewRatios, child) =>
+                            //       Visibility(
+                            //     visible: !useBrewRatios,
+                            //     child: Align(
+                            //       alignment: Alignment.centerRight,
+                            //       child: Row(
+                            //         mainAxisSize: MainAxisSize.min,
+                            //         children: [
+                            //           _teaColorSelector(context),
+                            //           smallSpacerWidget,
+                            //         ],
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
                             // Icon selection
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: _teaIconSelector(context),
-                            ),
+                            // Align(
+                            //   alignment: Alignment.centerRight,
+                            //   child: _teaIconSelector(context),
+                            // ),
                           ],
                         ),
                       ),

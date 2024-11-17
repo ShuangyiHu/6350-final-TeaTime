@@ -280,17 +280,17 @@ abstract class Stats {
   }
 
   // Retrieve a string value from the stats database
-  static Future<String> getString(StringQuery q) async {
-    String metric = '';
-    final db = await statsData;
+  // static Future<String> getString(StringQuery q) async {
+  //   String metric = '';
+  //   final db = await statsData;
 
-    // Query the stats table
-    var result = await db.rawQuery(q.sql);
-    if (result.isNotEmpty) {
-      metric = result[0][statsColumnString].toString();
-    }
-    return metric;
-  }
+  //   // Query the stats table
+  //   var result = await db.rawQuery(q.sql);
+  //   if (result.isNotEmpty) {
+  //     metric = result[0][statsColumnString].toString();
+  //   }
+  //   return metric;
+  // }
 }
 
 // Metric queries
@@ -339,40 +339,40 @@ enum DecimalQuery {
 }
 
 // String queries
-enum StringQuery {
-  morningTea(_morningTeaSQL),
-  afternoonTea(_afternoonTeaSQL);
+// enum StringQuery {
+// morningTea(_morningTeaSQL),
+// afternoonTea(_afternoonTeaSQL);
 
-  final String sql;
+// final String sql;
 
-  const StringQuery(this.sql);
+// const StringQuery(this.sql);
 
-  // Query SQL
-  static const _morningTeaSQL = '''SELECT (
-      SELECT $statsColumnName
-      FROM $statsTable
-      WHERE $statsColumnId = stat.$statsColumnId
-      ORDER BY $statsColumnTimerStartTime DESC
-      LIMIT 1
-    ) AS string
-    FROM $statsTable stat
-    WHERE STRFTIME('%H', stat.$statsColumnTimerStartTime / 1000, 'unixepoch', 'localtime') - 12 < 0
-    GROUP BY stat.$statsColumnId
-    ORDER BY COUNT(*) DESC
-    LIMIT 1''';
-  static const _afternoonTeaSQL = '''SELECT (
-      SELECT $statsColumnName
-      FROM $statsTable
-      WHERE $statsColumnId = stat.$statsColumnId
-      ORDER BY $statsColumnTimerStartTime DESC
-      LIMIT 1
-    ) AS string
-    FROM $statsTable stat
-    WHERE STRFTIME('%H', stat.$statsColumnTimerStartTime / 1000, 'unixepoch', 'localtime') - 12 >= 0
-    GROUP BY stat.$statsColumnId
-    ORDER BY COUNT(*) DESC
-    LIMIT 1''';
-}
+// Query SQL
+//   static const _morningTeaSQL = '''SELECT (
+//       SELECT $statsColumnName
+//       FROM $statsTable
+//       WHERE $statsColumnId = stat.$statsColumnId
+//       ORDER BY $statsColumnTimerStartTime DESC
+//       LIMIT 1
+//     ) AS string
+//     FROM $statsTable stat
+//     WHERE STRFTIME('%H', stat.$statsColumnTimerStartTime / 1000, 'unixepoch', 'localtime') - 12 < 0
+//     GROUP BY stat.$statsColumnId
+//     ORDER BY COUNT(*) DESC
+//     LIMIT 1''';
+//   static const _afternoonTeaSQL = '''SELECT (
+//       SELECT $statsColumnName
+//       FROM $statsTable
+//       WHERE $statsColumnId = stat.$statsColumnId
+//       ORDER BY $statsColumnTimerStartTime DESC
+//       LIMIT 1
+//     ) AS string
+//     FROM $statsTable stat
+//     WHERE STRFTIME('%H', stat.$statsColumnTimerStartTime / 1000, 'unixepoch', 'localtime') - 12 >= 0
+//     GROUP BY stat.$statsColumnId
+//     ORDER BY COUNT(*) DESC
+//     LIMIT 1''';
+// }
 
 // List queries
 enum ListQuery {

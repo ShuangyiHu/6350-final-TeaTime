@@ -132,7 +132,6 @@ class _TimerCountdownWidgetState extends State<TimerCountdownWidget> {
     );
   }
 
-  // Countdown timer text with optional timer adjustment buttons
   Widget _timerText([TeaTimer? timer]) {
     String text = timer?.timerString ?? formatTimer(0);
     int secs = (timer?.timerSeconds ?? 0) > 3600
@@ -141,53 +140,46 @@ class _TimerCountdownWidgetState extends State<TimerCountdownWidget> {
 
     return Selector<AppProvider, bool>(
       selector: (_, provider) => provider.hideIncrements,
-      builder: (context, hideIncrements, child) => Row(
-        children: [
-          // Silence button
-          timer != null && (_showTimerAdjustments || !hideIncrements)
-              ? _silenceButton(timer)
-              : spacerWidget,
-          IgnorePointer(
-            ignoring: timer == null || !hideIncrements,
-            child: GestureDetector(
+      builder: (context, hideIncrements, child) => Center(
+        // Center aligns everything within this widget
+        child: Row(
+          mainAxisSize: MainAxisSize.min, // Shrink the row to fit its children
+          children: [
+            spacerWidget,
+
+            // Silence button (conditionally rendered)
+            timer != null && (_showTimerAdjustments || !hideIncrements)
+                ? _silenceButton(timer)
+                : spacerWidget,
+            GestureDetector(
               // Toggle display of timer increment and mute buttons
               onTap: () => setState(() {
                 _showTimerAdjustments = !_showTimerAdjustments;
                 _hideTimerAdjustmentsDelay = hideTimerAdjustmentsDelay;
               }),
-              // Timer time remaining
+              // Timer text display
               child: AnimatedScale(
                 scale: timer?.timerSeconds == 1 ? 1.04 : 1.0,
                 duration: const Duration(seconds: 1),
                 curve: Curves.easeOutExpo,
-                child: SizedBox(
-                  width: text.length * 96.0,
-                  child: Container(
-                    padding: timerPadding,
-                    alignment: Alignment.center,
-                    child: Text(
-                      text,
-                      maxLines: 1,
-                      softWrap: false,
-                      overflow: TextOverflow.clip,
-                      textScaler: TextScaler.noScaling,
-                      style: textStyleTimer,
-                    ),
+                child: Container(
+                  padding: noPadding,
+                  alignment: Alignment.center, // Ensure the text is centered
+                  child: Text(
+                    text,
+                    maxLines: 1,
+                    softWrap: false,
+                    overflow: TextOverflow.clip,
+                    textScaler: TextScaler.noScaling,
+                    style: textStyleTimer,
                   ),
                 ),
               ),
             ),
-          ),
-          // Increment +/- buttons
-          timer != null && (_showTimerAdjustments || !hideIncrements)
-              ? Column(
-                  children: [
-                    _incrementButton(timer, secs),
-                    _incrementButton(timer, -secs),
-                  ],
-                )
-              : spacerWidget,
-        ],
+            spacerWidget,
+            spacerWidget,
+          ],
+        ),
       ),
     );
   }
@@ -195,8 +187,10 @@ class _TimerCountdownWidgetState extends State<TimerCountdownWidget> {
   // Silence timer button
   Widget _silenceButton(TeaTimer timer) {
     return Container(
-      margin: smallDefaultPadding,
+      margin: noPadding,
       child: IconButton(
+        // Set the size of the icon
+        iconSize: 100.0,
         // Toggle silent status for this timer
         onPressed: () {
           if (timer.tea != null) {
