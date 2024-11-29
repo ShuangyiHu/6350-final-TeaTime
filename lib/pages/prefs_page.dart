@@ -26,7 +26,7 @@ import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/prefs.dart';
 import 'package:cuppa_mobile/data/provider.dart';
 import 'package:cuppa_mobile/data/stats.dart';
-import 'package:cuppa_mobile/pages/about_page.dart';
+// import 'package:cuppa_mobile/pages/about_page.dart';
 import 'package:cuppa_mobile/pages/stats_page.dart';
 import 'package:cuppa_mobile/widgets/page_header.dart';
 import 'package:cuppa_mobile/widgets/tea_settings_list.dart';
@@ -64,72 +64,74 @@ class _PrefsWidgetState extends State<PrefsWidget> {
     bool layoutColumns = getDeviceSize(context).isLargeDevice;
 
     return Scaffold(
-      appBar: PlatformAdaptiveNavBar(
-        isPoppable: true,
-        title: AppString.prefs_title.translate(),
-        buttonTextDone: AppString.done_button.translate(),
-        // Button to navigate to About page
-        actionIcon: getPlatformAboutIcon(),
-        actionRoute: const AboutWidget(),
-        // Button to navigate to Stats page
-        secondaryActionIcon:
-            provider.collectStats ? getPlatformStatsIcon() : null,
-        secondaryActionRoute:
-            provider.collectStats ? const StatsWidget() : null,
-      ),
-      body: SafeArea(
-        child: layoutColumns
-            // Arrange Teas and Settings in two columns for large screens
-            ? Row(
-                children: [
-                  Expanded(
-                    child: TeaSettingsList(launchAddTea: widget.launchAddTea),
-                  ),
-                  Expanded(
-                    child: _otherSettingsList(context),
-                  ),
-                ],
-              )
-            // Use bottom nav bar with widget stack on small screens
-            : SlideIndexedStack(
-                duration: shortAnimationDuration,
-                beginSlideOffset: _navInitial
-                    // Do not transition on first build
-                    ? Offset.zero
-                    // Determine transition direction
-                    : _navSlideBack
-                        ? const Offset(-1.0, 0.0)
-                        : const Offset(1.0, 0.0),
-                endSlideOffset: Offset.zero,
-                index: _navIndex,
-                children: [
-                  TeaSettingsList(launchAddTea: widget.launchAddTea),
-                  _otherSettingsList(context),
-                ],
-              ),
-      ),
-      bottomNavigationBar: layoutColumns
-          ? null
-          // Navigate between Teas and Settings
-          : PlatformAdaptiveBottomNavBar(
-              currentIndex: _navIndex,
-              onTap: (index) => setState(() {
-                _navInitial = false;
-                _navSlideBack = index < _navIndex;
-                _navIndex = index;
-              }),
-              items: [
-                BottomNavigationBarItem(
-                  icon: navBarTeasIcon,
-                  label: AppString.teas_title.translate(),
+        appBar: PlatformAdaptiveNavBar(
+          isPoppable: true,
+          title: AppString.prefs_title.translate(),
+          buttonTextDone: AppString.done_button.translate(),
+          // Button to navigate to About page
+          actionIcon: getPlatformAboutIcon(),
+          // actionRoute: const AboutWidget(),
+          // Button to navigate to Stats page
+          secondaryActionIcon:
+              provider.collectStats ? getPlatformStatsIcon() : null,
+          secondaryActionRoute:
+              provider.collectStats ? const StatsWidget() : null,
+        ),
+        body: SafeArea(
+          child: layoutColumns
+              // Arrange Teas and Settings in two columns for large screens
+              ? Row(
+                  children: [
+                    Expanded(
+                      child: TeaSettingsList(launchAddTea: widget.launchAddTea),
+                    ),
+                    Expanded(
+                      child: _otherSettingsList(context),
+                    ),
+                  ],
+                )
+              // Use bottom nav bar with widget stack on small screens
+              : Column(
+                  children: [
+                    Expanded(
+                      child: SlideIndexedStack(
+                        duration: shortAnimationDuration,
+                        beginSlideOffset: _navInitial
+                            // Do not transition on first build
+                            ? Offset.zero
+                            // Determine transition direction
+                            : _navSlideBack
+                                ? const Offset(-1.0, 0.0)
+                                : const Offset(1.0, 0.0),
+                        endSlideOffset: Offset.zero,
+                        index: _navIndex,
+                        children: [
+                          TeaSettingsList(launchAddTea: widget.launchAddTea),
+                          _otherSettingsList(context),
+                        ],
+                      ),
+                    ),
+                    PlatformAdaptiveBottomNavBar(
+                      currentIndex: _navIndex,
+                      onTap: (index) => setState(() {
+                        _navInitial = false;
+                        _navSlideBack = index < _navIndex;
+                        _navIndex = index;
+                      }),
+                      items: [
+                        BottomNavigationBarItem(
+                          icon: navBarTeasIcon,
+                          label: AppString.teas_title.translate(),
+                        ),
+                        BottomNavigationBarItem(
+                          icon: navBarSettingsIcon,
+                          label: AppString.settings_title.translate(),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                BottomNavigationBarItem(
-                  icon: navBarSettingsIcon,
-                  label: AppString.settings_title.translate(),
-                ),
-              ],
-            ),
-    );
+        ));
   }
 
   // List of other settings with pinned header
@@ -144,17 +146,17 @@ class _PrefsWidgetState extends State<PrefsWidget> {
           child: Column(
             children: [
               // Setting: teacup style selection
-              _cupStyleSetting(context),
-              listDivider,
+              // _cupStyleSetting(context),
+              // listDivider,
               // Setting: collect timer usage stats
               _collectStatsSetting(context),
               listDivider,
               // Setting: use brew ratios
-              _useBrewRatiosSetting(context),
-              listDivider,
+              // _useBrewRatiosSetting(context),
+              // listDivider,
               // Setting: show extra info on buttons
-              _showExtraSetting(context),
-              listDivider,
+              // _showExtraSetting(context),
+              // listDivider,
               // Setting: stacked timer button view
               Selector<AppProvider, bool>(
                 selector: (_, provider) =>
@@ -173,8 +175,8 @@ class _PrefsWidgetState extends State<PrefsWidget> {
                 },
               ),
               // Setting: hide timer increment buttons
-              _hideIncrementsSetting(context),
-              listDivider,
+              // _hideIncrementsSetting(context),
+              // listDivider,
               // Setting: default to silent timer notifications
               _defaultSilentSetting(context),
               listDivider,
@@ -185,10 +187,10 @@ class _PrefsWidgetState extends State<PrefsWidget> {
               _appLanguageSetting(context),
               listDivider,
               // Setting: default to Celsius or Fahrenheit
-              _useCelsiusSetting(context),
-              listDivider,
+              // _useCelsiusSetting(context),
+              // listDivider,
               // Notification info
-              _notificationLink(),
+              // _notificationLink(),
             ],
           ),
         ),
@@ -331,38 +333,38 @@ class _PrefsWidgetState extends State<PrefsWidget> {
   }
 
   // Setting: teacup style selection
-  Widget _cupStyleSetting(BuildContext context) {
-    AppProvider provider = Provider.of<AppProvider>(context);
+  // Widget _cupStyleSetting(BuildContext context) {
+  //   AppProvider provider = Provider.of<AppProvider>(context);
 
-    return settingList(
-      context,
-      title: AppString.prefs_cup_style.translate(),
-      selectedItem: provider.cupStyle.localizedName,
-      selectedItemImage: provider.cupStyle.image,
-      itemList: CupStyle.values,
-      itemBuilder: _cupStyleItem,
-    );
-  }
+  //   return settingList(
+  //     context,
+  //     title: AppString.prefs_cup_style.translate(),
+  //     selectedItem: provider.cupStyle.localizedName,
+  //     selectedItemImage: provider.cupStyle.image,
+  //     itemList: CupStyle.values,
+  //     itemBuilder: _cupStyleItem,
+  //   );
+  // }
 
-  // Teacup style option
-  Widget _cupStyleItem(BuildContext context, int index) {
-    AppProvider provider = Provider.of<AppProvider>(context, listen: false);
-    CupStyle value = CupStyle.values.elementAt(index);
+  // // Teacup style option
+  // Widget _cupStyleItem(BuildContext context, int index) {
+  //   AppProvider provider = Provider.of<AppProvider>(context, listen: false);
+  //   CupStyle value = CupStyle.values.elementAt(index);
 
-    return settingListItem(
-      context,
-      // Cup style name
-      title: value.localizedName,
-      titleImage: value.image,
-      value: value,
-      groupValue: provider.cupStyle,
-      // Save cupStyle to prefs
-      onChanged: () {
-        provider.cupStyle = value;
-        Navigator.of(context).pop(true);
-      },
-    );
-  }
+  //   return settingListItem(
+  //     context,
+  //     // Cup style name
+  //     title: value.localizedName,
+  //     titleImage: value.image,
+  //     value: value,
+  //     groupValue: provider.cupStyle,
+  //     // Save cupStyle to prefs
+  //     onChanged: () {
+  //       provider.cupStyle = value;
+  //       Navigator.of(context).pop(true);
+  //     },
+  //   );
+  // }
 
   // Setting: app theme selection
   Widget _appThemeSetting(BuildContext context) {

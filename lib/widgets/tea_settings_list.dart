@@ -147,28 +147,62 @@ class _TeaSettingsListState extends State<TeaSettingsList> {
     );
   }
 
-  // Sort by option
   Widget _sortByOption(BuildContext context, int index) {
     SortBy value = SortBy.values.elementAt(index);
+    final isSelected = Provider.of<AppProvider>(context).currentSort == value;
 
     return adaptiveSelectListAction(
       action: ListTile(
         dense: true,
-        // Sorting type
+        // Sorting type title with conditional styling
         title: Text(
           value.localizedName,
-          style: textStyleTitle,
+          style: TextStyle(
+            fontSize: 16.0,
+            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+            color: isSelected ? Colors.blue : Colors.black,
+          ),
         ),
+        // Optionally display a trailing checkmark for selected sort
+        trailing: isSelected
+            ? Icon(
+                Icons.check,
+                color: Colors.blue,
+              )
+            : null,
       ),
       onTap: () {
         // Apply new sorting and animate the tea settings list
         _animateTeaList = true;
         Provider.of<AppProvider>(context, listen: false)
             .sortTeas(sortBy: value);
-        Navigator.of(context).pop(true);
+        Navigator.of(context).pop(true); // Close the selection dialog
       },
     );
   }
+
+  // // Sort by option
+  // Widget _sortByOption(BuildContext context, int index) {
+  //   SortBy value = SortBy.values.elementAt(index);
+
+  //   return adaptiveSelectListAction(
+  //     action: ListTile(
+  //       dense: true,
+  //       // Sorting type
+  //       title: Text(
+  //         value.localizedName,
+  //         style: textStyleTitle,
+  //       ),
+  //     ),
+  //     onTap: () {
+  //       // Apply new sorting and animate the tea settings list
+  //       _animateTeaList = true;
+  //       Provider.of<AppProvider>(context, listen: false)
+  //           .sortTeas(sortBy: value);
+  //       Navigator.of(context).pop(true);
+  //     },
+  //   );
+  // }
 
   // Reorderable list of tea settings cards
   Widget _teaSettingsList() {
