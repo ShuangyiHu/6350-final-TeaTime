@@ -8,7 +8,7 @@
 //  This source code is licensed under the BSD-style license found in LICENSE.txt.
 //  *******************************************************************************
 
-// Cuppa stats page
+// TeaTime stats page
 // - Tea timer usage report
 // - Stats display widgets
 

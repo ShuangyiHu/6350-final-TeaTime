@@ -1,29 +1,11 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    timer_page.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa Timer page
-// - Build interface and interactivity
-
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/helpers.dart';
 import 'package:cuppa_mobile/common/padding.dart';
-import 'package:cuppa_mobile/common/platform_adaptive.dart';
-import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/provider.dart';
 import 'package:cuppa_mobile/pages/prefs_page.dart';
 import 'package:cuppa_mobile/widgets/tea_button_list.dart';
 import 'package:cuppa_mobile/widgets/teacup.dart';
 import 'package:cuppa_mobile/widgets/timer_countdown.dart';
-import 'package:cuppa_mobile/widgets/tutorial.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -39,17 +21,19 @@ class TimerWidget extends StatelessWidget {
     bool layoutPortrait = getDeviceSize(context).isPortrait;
 
     return Scaffold(
-      appBar: PlatformAdaptiveNavBar(
-        isPoppable: false,
-        title: appName,
-        buttonTextDone: AppString.done_button.translate(),
-        // Button to navigate to Preferences page
-        actionIcon: tutorialTooltip(
-          context: context,
-          key: tutorialKey2,
-          child: getPlatformSettingsIcon(),
-        ),
-        actionRoute: const PrefsWidget(),
+      appBar: AppBar(
+        title: const Text(appName),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const PrefsWidget()),
+              );
+            },
+          ),
+        ],
       ),
       body: SafeArea(
         child: Column(
@@ -69,20 +53,10 @@ class TimerWidget extends StatelessWidget {
                       alignment: layoutPortrait
                           ? Alignment.center
                           : Alignment.centerRight,
-                      child: tutorialTooltip(
-                        context: context,
-                        key: tutorialKey1,
-                        showArrow: false,
-                        child: tutorialTooltip(
-                          context: context,
-                          key: tutorialKey5,
-                          showArrow: false,
-                          child: const FittedBox(
-                            fit: BoxFit.fitHeight,
-                            alignment: Alignment.center,
-                            child: TimerCountdownWidget(),
-                          ),
-                        ),
+                      child: const FittedBox(
+                        fit: BoxFit.fitHeight,
+                        alignment: Alignment.center,
+                        child: TimerCountdownWidget(),
                       ),
                     ),
                   ),
