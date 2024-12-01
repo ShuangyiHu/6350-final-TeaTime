@@ -64,74 +64,75 @@ class _PrefsWidgetState extends State<PrefsWidget> {
     bool layoutColumns = getDeviceSize(context).isLargeDevice;
 
     return Scaffold(
-        appBar: PlatformAdaptiveNavBar(
-          isPoppable: true,
-          title: AppString.prefs_title.translate(),
-          buttonTextDone: AppString.done_button.translate(),
-          // Button to navigate to About page
-          actionIcon: getPlatformAboutIcon(),
-          // actionRoute: const AboutWidget(),
-          // Button to navigate to Stats page
-          secondaryActionIcon:
-              provider.collectStats ? getPlatformStatsIcon() : null,
-          secondaryActionRoute:
-              provider.collectStats ? const StatsWidget() : null,
-        ),
-        body: SafeArea(
-          child: layoutColumns
-              // Arrange Teas and Settings in two columns for large screens
-              ? Row(
-                  children: [
-                    Expanded(
-                      child: TeaSettingsList(launchAddTea: widget.launchAddTea),
-                    ),
-                    Expanded(
-                      child: _otherSettingsList(context),
-                    ),
-                  ],
-                )
-              // Use bottom nav bar with widget stack on small screens
-              : Column(
-                  children: [
-                    Expanded(
-                      child: SlideIndexedStack(
-                        duration: shortAnimationDuration,
-                        beginSlideOffset: _navInitial
-                            // Do not transition on first build
-                            ? Offset.zero
-                            // Determine transition direction
-                            : _navSlideBack
-                                ? const Offset(-1.0, 0.0)
-                                : const Offset(1.0, 0.0),
-                        endSlideOffset: Offset.zero,
-                        index: _navIndex,
-                        children: [
-                          TeaSettingsList(launchAddTea: widget.launchAddTea),
-                          _otherSettingsList(context),
-                        ],
-                      ),
-                    ),
-                    PlatformAdaptiveBottomNavBar(
-                      currentIndex: _navIndex,
-                      onTap: (index) => setState(() {
-                        _navInitial = false;
-                        _navSlideBack = index < _navIndex;
-                        _navIndex = index;
-                      }),
-                      items: [
-                        BottomNavigationBarItem(
-                          icon: navBarTeasIcon,
-                          label: AppString.teas_title.translate(),
-                        ),
-                        BottomNavigationBarItem(
-                          icon: navBarSettingsIcon,
-                          label: AppString.settings_title.translate(),
-                        ),
+      appBar: PlatformAdaptiveNavBar(
+        isPoppable: true,
+        title: AppString.prefs_title.translate(),
+        buttonTextDone: AppString.done_button.translate(),
+        // Button to navigate to About page
+        actionIcon: getPlatformAboutIcon(),
+        // actionRoute: const AboutWidget(),
+        // Button to navigate to Stats page
+        secondaryActionIcon:
+            provider.collectStats ? getPlatformStatsIcon() : null,
+        secondaryActionRoute:
+            provider.collectStats ? const StatsWidget() : null,
+      ),
+      body: SafeArea(
+        child: layoutColumns
+            // Arrange Teas and Settings in two columns for large screens
+            ? Row(
+                children: [
+                  Expanded(
+                    child: TeaSettingsList(launchAddTea: widget.launchAddTea),
+                  ),
+                  Expanded(
+                    child: _otherSettingsList(context),
+                  ),
+                ],
+              )
+            // Use bottom nav bar with widget stack on small screens
+            : Column(
+                children: [
+                  Expanded(
+                    child: SlideIndexedStack(
+                      duration: shortAnimationDuration,
+                      beginSlideOffset: _navInitial
+                          // Do not transition on first build
+                          ? Offset.zero
+                          // Determine transition direction
+                          : _navSlideBack
+                              ? const Offset(-1.0, 0.0)
+                              : const Offset(1.0, 0.0),
+                      endSlideOffset: Offset.zero,
+                      index: _navIndex,
+                      children: [
+                        TeaSettingsList(launchAddTea: widget.launchAddTea),
+                        _otherSettingsList(context),
                       ],
                     ),
-                  ],
-                ),
-        ));
+                  ),
+                  PlatformAdaptiveBottomNavBar(
+                    currentIndex: _navIndex,
+                    onTap: (index) => setState(() {
+                      _navInitial = false;
+                      _navSlideBack = index < _navIndex;
+                      _navIndex = index;
+                    }),
+                    items: [
+                      BottomNavigationBarItem(
+                        icon: navBarTeasIcon,
+                        label: AppString.teas_title.translate(),
+                      ),
+                      BottomNavigationBarItem(
+                        icon: navBarSettingsIcon,
+                        label: AppString.settings_title.translate(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+      ),
+    );
   }
 
   // List of other settings with pinned header
