@@ -1,17 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    tea_name_dialog.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa tea name entry dialog
-
 import 'package:cuppa_mobile/common/colors.dart';
 import 'package:cuppa_mobile/common/platform_adaptive.dart';
 

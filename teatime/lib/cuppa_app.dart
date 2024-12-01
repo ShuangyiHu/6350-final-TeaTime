@@ -1,18 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    cuppa_app.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa app builder
-// - Intialize globals, theme, localization
-
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/globals.dart';
 import 'package:cuppa_mobile/common/local_notifications.dart';

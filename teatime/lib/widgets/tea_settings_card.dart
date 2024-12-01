@@ -1,18 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    tea_settings_card.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa tea settings card
-// - Build interface for tea customization
-
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/globals.dart';
 import 'package:cuppa_mobile/common/helpers.dart';
