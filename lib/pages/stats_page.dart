@@ -42,12 +42,12 @@ class _StatsWidgetState extends State<StatsWidget> {
   // Timer data
   int _beginDateTime = 0;
   int _totalCount = 0;
-  int _starredCount = 0;
+  final int _starredCount = 0;
   int _totalTime = 0;
   double _totalAmountG = 0.0;
   double _totalAmountTsp = 0.0;
-  String _morningTea = '';
-  String _afternoonTea = '';
+  final String _morningTea = '';
+  final String _afternoonTea = '';
   List<Stat> _summaryStats = [];
 
   // Chart interaction

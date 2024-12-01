@@ -20,7 +20,6 @@ import 'package:cuppa_mobile/data/brew_ratio.dart';
 import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/prefs.dart';
 import 'package:cuppa_mobile/data/presets.dart';
-import 'package:cuppa_mobile/data/stats.dart';
 import 'package:cuppa_mobile/data/tea.dart';
 
 import 'package:flutter/material.dart';

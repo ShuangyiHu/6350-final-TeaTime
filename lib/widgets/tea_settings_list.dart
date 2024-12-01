@@ -165,7 +165,7 @@ class _TeaSettingsListState extends State<TeaSettingsList> {
         ),
         // Optionally display a trailing checkmark for selected sort
         trailing: isSelected
-            ? Icon(
+            ? const Icon(
                 Icons.check,
                 color: Colors.blue,
               )
