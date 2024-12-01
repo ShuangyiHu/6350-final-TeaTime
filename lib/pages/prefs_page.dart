@@ -11,11 +11,9 @@ import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/prefs.dart';
 import 'package:cuppa_mobile/data/provider.dart';
 import 'package:cuppa_mobile/data/stats.dart';
-// import 'package:cuppa_mobile/pages/about_page.dart';
 import 'package:cuppa_mobile/pages/stats_page.dart';
 import 'package:cuppa_mobile/widgets/page_header.dart';
 import 'package:cuppa_mobile/widgets/tea_settings_list.dart';
-
 import 'package:app_settings/app_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -131,19 +129,8 @@ class _PrefsWidgetState extends State<PrefsWidget> {
         SliverToBoxAdapter(
           child: Column(
             children: [
-              // Setting: teacup style selection
-              // _cupStyleSetting(context),
-              // listDivider,
-              // Setting: collect timer usage stats
               _collectStatsSetting(context),
               listDivider,
-              // Setting: use brew ratios
-              // _useBrewRatiosSetting(context),
-              // listDivider,
-              // Setting: show extra info on buttons
-              // _showExtraSetting(context),
-              // listDivider,
-              // Setting: stacked timer button view
               Selector<AppProvider, bool>(
                 selector: (_, provider) =>
                     provider.teaCount > stackedViewTeaCount,
@@ -160,10 +147,6 @@ class _PrefsWidgetState extends State<PrefsWidget> {
                   );
                 },
               ),
-              // Setting: hide timer increment buttons
-              // _hideIncrementsSetting(context),
-              // listDivider,
-              // Setting: default to silent timer notifications
               _defaultSilentSetting(context),
               listDivider,
               // Setting: app theme selection
@@ -317,40 +300,6 @@ class _PrefsWidgetState extends State<PrefsWidget> {
       },
     );
   }
-
-  // Setting: teacup style selection
-  // Widget _cupStyleSetting(BuildContext context) {
-  //   AppProvider provider = Provider.of<AppProvider>(context);
-
-  //   return settingList(
-  //     context,
-  //     title: AppString.prefs_cup_style.translate(),
-  //     selectedItem: provider.cupStyle.localizedName,
-  //     selectedItemImage: provider.cupStyle.image,
-  //     itemList: CupStyle.values,
-  //     itemBuilder: _cupStyleItem,
-  //   );
-  // }
-
-  // // Teacup style option
-  // Widget _cupStyleItem(BuildContext context, int index) {
-  //   AppProvider provider = Provider.of<AppProvider>(context, listen: false);
-  //   CupStyle value = CupStyle.values.elementAt(index);
-
-  //   return settingListItem(
-  //     context,
-  //     // Cup style name
-  //     title: value.localizedName,
-  //     titleImage: value.image,
-  //     value: value,
-  //     groupValue: provider.cupStyle,
-  //     // Save cupStyle to prefs
-  //     onChanged: () {
-  //       provider.cupStyle = value;
-  //       Navigator.of(context).pop(true);
-  //     },
-  //   );
-  // }
 
   // Setting: app theme selection
   Widget _appThemeSetting(BuildContext context) {

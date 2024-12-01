@@ -10,7 +10,6 @@ import 'package:cuppa_mobile/data/stats.dart';
 import 'package:cuppa_mobile/data/tea.dart';
 import 'package:cuppa_mobile/widgets/mini_tea_button.dart';
 import 'package:cuppa_mobile/widgets/page_header.dart';
-
 import 'dart:math';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -199,10 +198,7 @@ class _StatsWidgetState extends State<StatsWidget> {
   Future<bool> _fetchTimerStats() async {
     _beginDateTime = await Stats.getMetric(MetricQuery.beginDateTime);
     _totalCount = await Stats.getMetric(MetricQuery.totalCount);
-    // _starredCount = await Stats.getMetric(MetricQuery.starredCount);
     _totalTime = await Stats.getMetric(MetricQuery.totalTime);
-    // _morningTea = await Stats.getString(StringQuery.morningTea);
-    // _afternoonTea = await Stats.getString(StringQuery.afternoonTea);
     _summaryStats = await Stats.getTeaStats(ListQuery.summaryStats);
     _totalAmountG = await Stats.getDecimal(DecimalQuery.totalAmountG);
     _totalAmountTsp = await Stats.getDecimal(DecimalQuery.totalAmountTsp);
@@ -429,13 +425,6 @@ class _StatsWidgetState extends State<StatsWidget> {
           metricName: AppString.stats_timer_count.translate(),
           metric: _totalCount.toString(),
         ),
-        // Visibility(
-        //   visible: _totalCount > 0,
-        //   child: _metricWidget(
-        //     metricName: AppString.stats_starred.translate(),
-        //     metric: formatPercent(_starredCount / _totalCount),
-        //   ),
-        // ),
         GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: _toggleAltMetrics,

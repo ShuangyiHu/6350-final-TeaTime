@@ -6,7 +6,6 @@ import 'package:cuppa_mobile/pages/prefs_page.dart';
 import 'package:cuppa_mobile/widgets/tea_button_list.dart';
 import 'package:cuppa_mobile/widgets/teacup.dart';
 import 'package:cuppa_mobile/widgets/timer_countdown.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
