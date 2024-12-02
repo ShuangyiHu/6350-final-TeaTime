@@ -82,7 +82,7 @@ The **TeaTime Application** is a mobile app designed to enhance the tea brewing 
 ## Installation and Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/teatime.git
+   git clone https://github.com/ShuangyiHu/6350-final-TeaTime/tree/main
    cd teatime
    ```
 2. Install dependencies:
