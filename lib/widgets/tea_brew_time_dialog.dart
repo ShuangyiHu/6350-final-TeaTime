@@ -76,6 +76,7 @@ class _TeaBrewTimeDialogState extends State<TeaBrewTimeDialog> {
     return AlertDialog.adaptive(
       // Time entry
       content: _timePicker(),
+      actionsAlignment: MainAxisAlignment.center, // Center actions
       actions: <Widget>[
         // Cancel and close dialog
         adaptiveDialogAction(
@@ -134,7 +135,6 @@ class _TeaBrewTimeDialogState extends State<TeaBrewTimeDialog> {
               _updateTimePicker(doScroll: true);
             },
           ),
-          spacerWidget,
           // Hours picker
           Visibility(
             visible: _hoursSelectionMode,
@@ -211,7 +211,6 @@ class _TeaBrewTimeDialogState extends State<TeaBrewTimeDialog> {
               padTime: true,
             ),
           ),
-          spacerWidget,
           // Increment up
           adaptiveSmallButton(
             icon: incrementUpIcon,

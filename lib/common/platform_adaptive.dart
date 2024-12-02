@@ -1,22 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    platform_adaptive.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa platform adaptive elements
-// - Icons for Android and iOS
-// - Buttons and controls for Android and iOS
-// - Text form field for Android and iOS
-// - Create NavBar and BottomNavBar page navigation for context platform
-// - openPlatformAdaptiveSelectList modal/dialog selector for context platform
-
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/icons.dart';
 import 'package:cuppa_mobile/common/padding.dart';
@@ -133,22 +114,28 @@ Widget adaptiveDialogAction({
   }
 }
 
-// Small button with styling appropriate to platform
+// Small button with platform-specific styling and customizable size
 Widget adaptiveSmallButton({
   required IconData icon,
   required Function()? onPressed,
+  double size = 24.0, // Default size for touch target
+  double iconSize = 12.0, // Default icon size
 }) {
   if (Platform.isIOS) {
     return CupertinoButton(
-      padding: noPadding,
+      padding: EdgeInsets.all((size - iconSize) / 2), // Center the icon
       onPressed: onPressed,
-      child: Icon(icon),
+      child: Icon(icon, size: iconSize),
     );
   } else {
     return OutlinedButton(
-      style: OutlinedButton.styleFrom(visualDensity: VisualDensity.compact),
+      style: OutlinedButton.styleFrom(
+        minimumSize: Size(size, size), // Minimum touch target size
+        padding: EdgeInsets.all((size - iconSize) / 2), // Center the icon
+        visualDensity: VisualDensity.compact, // Compact spacing
+      ),
       onPressed: onPressed,
-      child: Icon(icon),
+      child: Icon(icon, size: iconSize),
     );
   }
 }
@@ -505,10 +492,12 @@ Future<bool?> openPlatformAdaptiveSelectList({
       builder: (BuildContext context) {
         return AlertDialog.adaptive(
           title: Text(titleText),
-          content: SizedBox(
-            width: double.maxFinite,
+          content: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: MediaQuery.of(context).size.width * 0.9,
+              maxHeight: MediaQuery.of(context).size.height * 0.6,
+            ),
             child: Scrollbar(
-              // Item options
               child: ListView.separated(
                 padding: noPadding,
                 shrinkWrap: true,

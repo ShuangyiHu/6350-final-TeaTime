@@ -11,7 +11,6 @@ import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/prefs.dart';
 import 'package:cuppa_mobile/data/provider.dart';
 import 'package:cuppa_mobile/data/tea.dart';
-import 'package:cuppa_mobile/widgets/tea_brew_ratio_dialog.dart';
 import 'package:cuppa_mobile/widgets/tea_brew_temp_dialog.dart';
 import 'package:cuppa_mobile/widgets/tea_brew_time_dialog.dart';
 import 'package:cuppa_mobile/widgets/tea_color_dialog.dart';
@@ -111,47 +110,6 @@ class TeaSettingsCard extends StatelessWidget {
                               child: _teaBrewTempSelector(context),
                             ),
                             spacerWidget,
-                            // Brew ratio
-                            // Selector<AppProvider, bool>(
-                            //   selector: (_, provider) => provider.useBrewRatios,
-                            //   builder: (context, useBrewRatios, child) =>
-                            //       Visibility(
-                            //     visible: useBrewRatios,
-                            //     child: Align(
-                            //       alignment: Alignment.centerRight,
-                            //       child: Row(
-                            //         mainAxisSize: MainAxisSize.min,
-                            //         children: [
-                            //           _teaBrewRatioSelector(context),
-                            //           smallSpacerWidget,
-                            //         ],
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
-                            // Tea color selection - default layout
-                            // Selector<AppProvider, bool>(
-                            //   selector: (_, provider) => provider.useBrewRatios,
-                            //   builder: (context, useBrewRatios, child) =>
-                            //       Visibility(
-                            //     visible: !useBrewRatios,
-                            //     child: Align(
-                            //       alignment: Alignment.centerRight,
-                            //       child: Row(
-                            //         mainAxisSize: MainAxisSize.min,
-                            //         children: [
-                            //           _teaColorSelector(context),
-                            //           smallSpacerWidget,
-                            //         ],
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
-                            // Icon selection
-                            // Align(
-                            //   alignment: Alignment.centerRight,
-                            //   child: _teaIconSelector(context),
-                            // ),
                           ],
                         ),
                       ),
@@ -345,18 +303,6 @@ class TeaSettingsCard extends StatelessWidget {
     return SizedBox(
       height: double.infinity,
       child: InkWell(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              formatTimer(tea.brewTime),
-              style: textStyleSettingNumber,
-            ),
-            dropdownArrow,
-          ],
-        ),
-        // Open tea brew time dialog
         onTap: () => _openTeaBrewTimeDialog(
           context,
           tea.brewTimeHours,
@@ -371,6 +317,24 @@ class TeaSettingsCard extends StatelessWidget {
             ).updateTea(tea, brewTime: newValue);
           }
         }),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0), // Add padding
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center, // Align vertically
+            children: <Widget>[
+              Flexible(
+                child: Text(
+                  formatTimer(tea.brewTime),
+                  style: textStyleSettingNumber,
+                  overflow: TextOverflow.ellipsis, // Prevent text overflow
+                ),
+              ),
+              dropdownArrow,
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -454,58 +418,6 @@ class TeaSettingsCard extends StatelessWidget {
           tempFOptions: brewTempFOptions,
           tempCIncrements: brewTempCIncrements,
           tempFIncrements: brewTempFIncrements,
-          buttonTextCancel: AppString.cancel_button.translate(),
-          buttonTextOK: AppString.ok_button.translate(),
-        );
-      },
-    );
-  }
-
-  // Tea brew ratio selection
-  Widget _teaBrewRatioSelector(BuildContext context) {
-    return SizedBox(
-      height: double.infinity,
-      child: InkWell(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              tea.brewRatio.numeratorString,
-              style: textStyleSettingNumber,
-            ),
-            dropdownArrow,
-          ],
-        ),
-        // Open tea brew ratio dialog
-        onTap: () =>
-            _openTeaBrewRatioDialog(context, tea.brewRatio).then((newValue) {
-          if (newValue != null) {
-            // Save brew ratio to prefs
-            Provider.of<AppProvider>(
-              navigatorKey.currentContext!,
-              listen: false,
-            ).updateTea(
-              tea,
-              brewRatio: newValue,
-            );
-          }
-        }),
-      ),
-    );
-  }
-
-  // Display a tea brew ratio entry dialog box
-  Future<BrewRatio?> _openTeaBrewRatioDialog(
-    BuildContext context,
-    BrewRatio currentRatio,
-  ) async {
-    return showAdaptiveDialog<BrewRatio?>(
-      context: context,
-      barrierDismissible: true,
-      builder: (BuildContext context) {
-        return TeaBrewRatioDialog(
-          initialRatio: currentRatio,
           buttonTextCancel: AppString.cancel_button.translate(),
           buttonTextOK: AppString.ok_button.translate(),
         );

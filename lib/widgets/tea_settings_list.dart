@@ -357,7 +357,7 @@ class _TeaSettingsListState extends State<TeaSettingsList> {
         contentPadding: noPadding,
         // Preset tea icon
         leading: SizedBox.square(
-          dimension: 48.0,
+          dimension: 12.0,
           child: preset.isCustom
               ? customPresetIcon(color: presetColor)
               : Icon(
