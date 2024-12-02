@@ -52,15 +52,26 @@ The **TeaTime Application** is a mobile app designed to enhance the tea brewing 
    - Timer for brewing tea, displaying countdowns for selected tea types.  
    - Includes visually appealing icons (e.g., teapot and teacup).
 
+   - ![image](https://github.com/user-attachments/assets/5c3c8f96-4ced-4595-a899-41cd58feb1d4)
+
+
 ### 2. **Preferences Screen**
    - Manage settings like language and theme.  
    - Access Tea Setup, Statistics, and other sections.
 
+   - ![image](https://github.com/user-attachments/assets/8597c8d0-9977-4867-92ca-51b226aadb48)
+
+
 ### 3. **Theme Selection**
    - Choose between Simple or Dark themes for a personalized interface.
 
+![image](https://github.com/user-attachments/assets/c1a9c56a-5164-4a4e-8cfe-1d158ddf113d)
+
 ### 4. **Language Selection**
    - Switch the app language to options like English, Mandarin, or Deutsch.
+
+   - ![image](https://github.com/user-attachments/assets/b1436067-a81a-4a06-82b8-1f658f033c68)
+
 
 ### 5. **Tea Setup**
    - Add, delete, or configure tea types and their brewing times.
@@ -68,11 +79,17 @@ The **TeaTime Application** is a mobile app designed to enhance the tea brewing 
 ### 6. **Add Tea Type**
    - Add new tea types (e.g., Oolong) and define custom brewing times.
 
+   - ![image](https://github.com/user-attachments/assets/b42ccefc-c505-46d7-9231-bddeea5a4084)
+
+
 ### 7. **Delete Tea Type**
    - Remove existing tea types and their brewing configurations.
 
 ### 8. **Statistics Screen**
    - View usage data for tea types, including percentages and pie charts.
+
+   - ![image](https://github.com/user-attachments/assets/6f6a67b1-12f1-4532-953b-acb7e4149979)
+
 
 ### 9. **Data Clearing Confirmation**
    - Confirmation dialog for clearing stored data.
@@ -82,7 +99,7 @@ The **TeaTime Application** is a mobile app designed to enhance the tea brewing 
 ## Installation and Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ShuangyiHu/6350-final-TeaTime/tree/main
+   git clone https://github.com/ShuangyiHu/6350-final-TeaTime.git
    cd teatime
    ```
 2. Install dependencies:
@@ -101,11 +118,6 @@ The **TeaTime Application** is a mobile app designed to enhance the tea brewing 
 - Integration with notifications to alert users when brewing is complete.
 - Cloud backup for saving preferences and data across devices.
 - Additional themes and languages based on user feedback.
-
----
-
-## Contact
-For inquiries or support, contact us at **support@teatime.com**.
 
 ---
 
