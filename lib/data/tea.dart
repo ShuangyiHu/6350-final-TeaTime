@@ -1,7 +1,6 @@
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/globals.dart';
 import 'package:cuppa_mobile/common/helpers.dart';
-import 'package:cuppa_mobile/data/brew_ratio.dart';
 
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
@@ -15,7 +14,6 @@ class Tea {
   late String name;
   late int brewTime;
   late int brewTemp;
-  late BrewRatio brewRatio;
   late TeaColor color;
   Color? colorShade;
   late TeaIcon icon;
@@ -31,7 +29,6 @@ class Tea {
     required this.name,
     required this.brewTime,
     required this.brewTemp,
-    required this.brewRatio,
     TeaColor? color,
     int colorValue = defaultTeaColorValue,
     this.colorShade,
@@ -291,9 +288,6 @@ class Tea {
       name: tryCast<String>(json[jsonKeyName]) ?? unknownString,
       brewTime: tryCast<int>(json[jsonKeyBrewTime]) ?? defaultBrewTime,
       brewTemp: tryCast<int>(json[jsonKeyBrewTemp]) ?? boilDegreesC,
-      brewRatio: json[jsonKeyBrewRatio] != null
-          ? BrewRatio.fromJson(json[jsonKeyBrewRatio])
-          : BrewRatio(),
       colorValue: tryCast<int>(json[jsonKeyColor]) ?? defaultTeaColorValue,
       colorShade: tryCast<int>(json[jsonKeyColorShadeRed]) != null &&
               tryCast<int>(json[jsonKeyColorShadeGreen]) != null &&
@@ -320,7 +314,6 @@ class Tea {
       jsonKeyName: name,
       jsonKeyBrewTime: brewTime,
       jsonKeyBrewTemp: brewTemp,
-      jsonKeyBrewRatio: brewRatio,
       jsonKeyColor: color.value,
       jsonKeyColorShadeRed: colorShade?.red,
       jsonKeyColorShadeGreen: colorShade?.green,
@@ -379,7 +372,6 @@ final Tea dummyTea = Tea(
   name: unknownString * teaNameMaxLength,
   brewTime: defaultBrewTime,
   brewTemp: boilDegreesC,
-  brewRatio: BrewRatio(),
   isFavorite: false,
   isActive: false,
 );

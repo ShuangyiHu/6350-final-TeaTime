@@ -1,4 +1,4 @@
-const appName = 'teatime';
+const appName = 'TeaTime';
 const appIcon = 'images/Cuppa_icon.png';
 
 // Cup images

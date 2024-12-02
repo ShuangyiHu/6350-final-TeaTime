@@ -404,13 +404,6 @@ class _TeaSettingsListState extends State<TeaSettingsList> {
                             ),
                           ),
                         ),
-                        spacerWidget,
-                        Text(
-                          preset.ratioDisplay(provider.useCelsius),
-                          style: textStyleSettingNumber.copyWith(
-                            color: presetColor,
-                          ),
-                        ),
                       ],
                     ),
             ),

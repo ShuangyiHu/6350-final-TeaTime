@@ -1,6 +1,5 @@
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/helpers.dart';
-import 'package:cuppa_mobile/data/brew_ratio.dart';
 import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/tea.dart';
 
@@ -13,8 +12,6 @@ class Preset {
   int brewTime;
   int brewTempDegreesC;
   int brewTempDegreesF;
-  BrewRatio brewRatioG;
-  BrewRatio brewRatioTsp;
   TeaColor color;
   TeaIcon icon;
   bool isCustom;
@@ -25,8 +22,6 @@ class Preset {
     required this.brewTime,
     required this.brewTempDegreesC,
     required this.brewTempDegreesF,
-    required this.brewRatioG,
-    required this.brewRatioTsp,
     required this.color,
     required this.icon,
     this.isCustom = false,
@@ -54,20 +49,12 @@ class Preset {
     );
   }
 
-  // Brew ratio display
-  String ratioDisplay(bool useCelsius) {
-    return useCelsius
-        ? brewRatioG.numeratorString
-        : brewRatioTsp.numeratorString;
-  }
-
   // Create a new tea from this preset
   Tea createTea({required bool useCelsius, bool isFavorite = false}) {
     return Tea(
       name: localizedName,
       brewTime: brewTime,
       brewTemp: (useCelsius ? brewTempDegreesC : brewTempDegreesF),
-      brewRatio: (useCelsius ? brewRatioG : brewRatioTsp),
       color: color,
       icon: icon,
       isFavorite: isFavorite,
@@ -86,18 +73,6 @@ abstract class Presets {
       brewTime: defaultBrewTime,
       brewTempDegreesC: boilDegreesC,
       brewTempDegreesF: boilDegreesF,
-      brewRatioG: BrewRatio(
-        ratioNumerator: defaultBrewRatioNumeratorG,
-        ratioDenominator: defaultBrewRatioDenominatorMl,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: defaultBrewRatioNumeratorTsp,
-        ratioDenominator: defaultBrewRatioDenominatorOz,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.black,
       icon: TeaIcon.timer,
       isCustom: true,
@@ -108,18 +83,6 @@ abstract class Presets {
       brewTime: 240,
       brewTempDegreesC: boilDegreesC,
       brewTempDegreesF: boilDegreesF,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 1.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.black,
       icon: TeaIcon.timer,
     ),
@@ -129,18 +92,6 @@ abstract class Presets {
       brewTime: 210,
       brewTempDegreesC: 95,
       brewTempDegreesF: 200,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 1.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.black,
       icon: TeaIcon.timer,
     ),
@@ -150,18 +101,6 @@ abstract class Presets {
       brewTime: 270,
       brewTempDegreesC: 95,
       brewTempDegreesF: 200,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 1.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.black,
       icon: TeaIcon.timer,
     ),
@@ -171,18 +110,6 @@ abstract class Presets {
       brewTime: 150,
       brewTempDegreesC: 80,
       brewTempDegreesF: 180,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.green,
       icon: TeaIcon.timer,
     ),
@@ -192,18 +119,6 @@ abstract class Presets {
       brewTime: 300,
       brewTempDegreesC: 80,
       brewTempDegreesF: 180,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.green,
       icon: TeaIcon.timer,
     ),
@@ -213,18 +128,6 @@ abstract class Presets {
       brewTime: 300,
       brewTempDegreesC: boilDegreesC,
       brewTempDegreesF: boilDegreesF,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 6.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 2.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.orange,
       icon: TeaIcon.timer,
     ),
@@ -234,18 +137,6 @@ abstract class Presets {
       brewTime: 300,
       brewTempDegreesC: boilDegreesC,
       brewTempDegreesF: boilDegreesF,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 6.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 2.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.orange,
       icon: TeaIcon.timer,
     ),
@@ -255,18 +146,6 @@ abstract class Presets {
       brewTime: 240,
       brewTempDegreesC: boilDegreesC,
       brewTempDegreesF: boilDegreesF,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 6.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 2.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.orange,
       icon: TeaIcon.timer,
     ),
@@ -276,18 +155,6 @@ abstract class Presets {
       brewTime: 180,
       brewTempDegreesC: boilDegreesC,
       brewTempDegreesF: boilDegreesF,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 6.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 2.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.orange,
       icon: TeaIcon.timer,
     ),
@@ -297,18 +164,6 @@ abstract class Presets {
       brewTime: 240,
       brewTempDegreesC: boilDegreesC,
       brewTempDegreesF: boilDegreesF,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 4.5,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 1.5,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.brown,
       icon: TeaIcon.timer,
     ),
@@ -318,18 +173,6 @@ abstract class Presets {
       brewTime: 270,
       brewTempDegreesC: 95,
       brewTempDegreesF: 200,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 4.5,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 1.5,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.brown,
       icon: TeaIcon.timer,
     ),
@@ -339,18 +182,6 @@ abstract class Presets {
       brewTime: 43200,
       brewTempDegreesC: roomTemp,
       brewTempDegreesF: roomTemp,
-      brewRatioG: BrewRatio(
-        ratioNumerator: 3.0,
-        ratioDenominator: 250,
-        metricNumerator: true,
-        metricDenominator: true,
-      ),
-      brewRatioTsp: BrewRatio(
-        ratioNumerator: 1.0,
-        ratioDenominator: 8,
-        metricNumerator: false,
-        metricDenominator: false,
-      ),
       color: TeaColor.blue,
       icon: TeaIcon.timer,
     ),

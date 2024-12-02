@@ -46,10 +46,7 @@ class Stat {
     this.name = tea?.name ?? name ?? unknownString;
     this.brewTime = tea?.brewTime ?? brewTime ?? defaultBrewTime;
     this.brewTemp = tea?.brewTemp ?? brewTemp ?? boilDegreesC;
-    this.brewAmount = tea?.brewRatio.ratioNumerator ?? brewAmount ?? 0.0;
-    this.brewAmountMetric = tea?.brewRatio.metricNumerator ??
-        brewAmountMetric ??
-        regionSettings.usesMetricSystem;
+
     this.colorShadeRed = tea?.getColor().red ?? colorShadeRed ?? 0;
     this.colorShadeGreen = tea?.getColor().green ?? colorShadeGreen ?? 0;
     this.colorShadeBlue = tea?.getColor().blue ?? colorShadeBlue ?? 0;

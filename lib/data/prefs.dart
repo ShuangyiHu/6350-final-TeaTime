@@ -1,6 +1,5 @@
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/globals.dart';
-import 'package:cuppa_mobile/data/brew_ratio.dart';
 import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/tea.dart';
 
@@ -32,7 +31,6 @@ abstract class Prefs {
           name: sharedPrefs.getString(prefTea1Name) ?? unknownString,
           brewTime: sharedPrefs.getInt(prefTea1BrewTime) ?? defaultBrewTime,
           brewTemp: sharedPrefs.getInt(prefTea1BrewTemp) ?? boilDegreesC,
-          brewRatio: BrewRatio(),
           colorValue: sharedPrefs.getInt(prefTea1Color) ?? defaultTeaColorValue,
           iconValue: sharedPrefs.getInt(prefTea1Icon) ?? defaultTeaIconValue,
           isFavorite: sharedPrefs.getBool(prefTea1IsFavorite) ?? true,
@@ -56,7 +54,6 @@ abstract class Prefs {
           name: sharedPrefs.getString(prefTea2Name) ?? unknownString,
           brewTime: sharedPrefs.getInt(prefTea2BrewTime) ?? defaultBrewTime,
           brewTemp: sharedPrefs.getInt(prefTea2BrewTemp) ?? boilDegreesC,
-          brewRatio: BrewRatio(),
           colorValue: sharedPrefs.getInt(prefTea2Color) ?? defaultTeaColorValue,
           iconValue: defaultTeaIconValue,
           isFavorite: sharedPrefs.getBool(prefTea2IsFavorite) ?? true,
@@ -80,7 +77,6 @@ abstract class Prefs {
           name: sharedPrefs.getString(prefTea3Name) ?? unknownString,
           brewTime: sharedPrefs.getInt(prefTea3BrewTime) ?? defaultBrewTime,
           brewTemp: sharedPrefs.getInt(prefTea3BrewTemp) ?? boilDegreesC,
-          brewRatio: BrewRatio(),
           colorValue: sharedPrefs.getInt(prefTea3Color) ?? defaultTeaColorValue,
           iconValue: defaultTeaIconValue,
           isFavorite: sharedPrefs.getBool(prefTea3IsFavorite) ?? true,

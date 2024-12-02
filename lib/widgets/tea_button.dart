@@ -114,25 +114,6 @@ class TeaButton extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            // Brew ratio
-                            Selector<AppProvider, bool>(
-                              selector: (_, provider) => provider.useBrewRatios,
-                              builder: (context, useBrewRatios, child) =>
-                                  Visibility(
-                                visible: useBrewRatios,
-                                child: Container(
-                                  padding: rowPadding,
-                                  child: Text(
-                                    tea.brewRatio.ratioString,
-                                    style: textStyleButtonTertiary.copyWith(
-                                      color: tea.isActive
-                                          ? timerActiveColor
-                                          : tea.getColor(),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
                       ),

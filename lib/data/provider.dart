@@ -1,6 +1,5 @@
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/globals.dart';
-import 'package:cuppa_mobile/data/brew_ratio.dart';
 import 'package:cuppa_mobile/data/localization.dart';
 import 'package:cuppa_mobile/data/prefs.dart';
 import 'package:cuppa_mobile/data/presets.dart';
@@ -53,7 +52,6 @@ class AppProvider extends ChangeNotifier {
     int? brewTimeMinutes,
     int? brewTimeSeconds,
     int? brewTemp,
-    BrewRatio? brewRatio,
     TeaColor? color,
     Color? colorShade,
     TeaIcon? icon,
@@ -80,9 +78,7 @@ class AppProvider extends ChangeNotifier {
       if (brewTemp != null) {
         _teaList[teaIndex].brewTemp = brewTemp;
       }
-      if (brewRatio != null) {
-        _teaList[teaIndex].brewRatio = brewRatio;
-      }
+
       if (color != null) {
         _teaList[teaIndex].color = color;
       }
