@@ -1,17 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    colors.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa colors
-
 import 'package:flutter/material.dart';
 
 // Timer colors

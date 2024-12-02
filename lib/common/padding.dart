@@ -1,17 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    padding.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa padding, margins, and spacers
-
 import 'package:flutter/material.dart';
 
 // Spacers

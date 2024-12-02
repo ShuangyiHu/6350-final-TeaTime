@@ -1,34 +1,5 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    constants.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa constants
-// - App info, defaults, prefs keys, settings limits
-
-// App info
-const appName = 'Cuppa';
+const appName = 'teatime';
 const appIcon = 'images/Cuppa_icon.png';
-const aboutCopyright = '\u00a9 Nathan Cosgray';
-const aboutURL = 'https://nathanatos.com';
-
-// About list item link URLs
-const versionsURL = 'https://github.com/ncosgray/cuppa_mobile/releases';
-const licenseURL =
-    'https://github.com/ncosgray/cuppa_mobile/blob/master/LICENSE.txt';
-const sourceURL = 'https://github.com/ncosgray/cuppa_mobile';
-const translateURL = 'https://hosted.weblate.org/engage/cuppa/';
-const issuesURL = 'https://github.com/ncosgray/cuppa_mobile/issues';
-const privacyURL = 'https://www.nathanatos.com/privacy/';
-const supportURL =
-    'https://github.com/ncosgray/cuppa_mobile?tab=readme-ov-file#support-the-project';
 
 // Cup images
 const cupImageClassic = 'images/Cuppa_hires_default.png';

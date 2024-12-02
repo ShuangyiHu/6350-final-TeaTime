@@ -1,19 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    tea_timer.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Cuppa data
-// - Tea timer class and timer objects
-// - Timer utility functions
-
 import 'package:cuppa_mobile/common/constants.dart';
 import 'package:cuppa_mobile/common/helpers.dart';
 import 'package:cuppa_mobile/data/tea.dart';

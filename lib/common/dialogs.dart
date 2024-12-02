@@ -1,18 +1,3 @@
-/*
- *******************************************************************************
- Package:  cuppa_mobile
- Class:    dialogs.dart
- Author:   Nathan Cosgray | https://www.nathanatos.com
- -------------------------------------------------------------------------------
- Copyright (c) 2017-2024 Nathan Cosgray. All rights reserved.
-
- This source code is licensed under the BSD-style license found in LICENSE.txt.
- *******************************************************************************
-*/
-
-// Generic dialogs
-// - Confirmation dialog, informational dialog
-
 import 'package:cuppa_mobile/common/padding.dart';
 import 'package:cuppa_mobile/common/platform_adaptive.dart';
 import 'package:cuppa_mobile/data/localization.dart';
