@@ -1,4 +1,4 @@
-## ☕ Cuppa
+## ☕ Teatime
 
 Teatime is a small application to time your cup of tea as it steeps. Tired of leaving your tea too long, to become bitter and cold, or drinking it too soon and not appreciating its full potential? Then this utility is for you!
 
