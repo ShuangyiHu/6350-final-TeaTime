@@ -1,1 +1,0 @@
-* Fixed notifcation bug on Android.

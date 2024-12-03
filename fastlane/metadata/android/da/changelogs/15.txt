@@ -1,3 +1,0 @@
-* En ny indstillingsside
-* Vælg dine egne te-navne, bryggetider og farver.
-* Gem indstillinger for tre forskellige teer.

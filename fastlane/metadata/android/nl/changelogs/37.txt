@@ -1,3 +1,0 @@
-* [NIEUW] Knop om verwĳderen van theeën ongedaan te maken;
-* [VERBETERD] Bug met snelkoppelingen na het herschikken van de theelĳst;
-* [NIEUW] Urdu- en Traditioneel Chinese vertalingen - draag ook bij via Weblate!

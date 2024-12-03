@@ -1,2 +1,0 @@
-* Yeni "Material You" görünümü.
-* Değişken renk düzeni aygıt ayarlarınızla eşleşir.

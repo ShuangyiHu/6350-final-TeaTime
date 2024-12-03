@@ -1,2 +1,0 @@
-* Suporta permissão de notificação do Android 13.
-* Atualizações de tradução de idiomas - contribua via Weblate!

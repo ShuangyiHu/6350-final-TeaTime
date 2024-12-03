@@ -1,4 +1,0 @@
-* Inkluzivi akvan temperaturon por ĉiu teo.
-* Eblo montri kromajn tefarajn informojn sur tempumilaj butonoj.
-* Tempumu teojn, kiuj estas farebla en pli ol 10 minutoj.
-* Pliaj lingvoj kaj plibonigoj de la traduko – kontribuu ĉe Weblate!

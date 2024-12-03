@@ -1,3 +1,0 @@
-* Cuppa se tradujo a 9 nuevos idiomas - ¡colabore via Weblate!
-* Tés de tiempo que empapan menos de un minuto.
-* Varias pequeñas mejoras en la interfaz de usuario y corrección de errores.

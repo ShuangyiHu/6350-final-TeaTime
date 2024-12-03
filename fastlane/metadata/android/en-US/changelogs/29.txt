@@ -1,2 +1,0 @@
-* fix crash on foldable devices
-* improved monochrome icon

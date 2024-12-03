@@ -1,3 +1,0 @@
-* Lehentasunen orri berri bat!
-* Ezarri zure te-izenak, infusio-denborak eta koloreak.
-* Hiru te desberdinetarako konfigurazioa gordetzen du.

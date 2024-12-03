@@ -1,2 +1,0 @@
-* New "Material You" look and feel.
-* Dynamic color scheme matches your device settings.

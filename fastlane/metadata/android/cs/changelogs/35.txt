@@ -1,4 +1,0 @@
-* Přidat tutoriál pro nové uživatele Cuppa.
-* Podpora delších dob louhování.
-* Úpravy použitelnosti a rozhraní.
-* Nový čínský překlad - přispějte dalšími jazyky přes Weblate!

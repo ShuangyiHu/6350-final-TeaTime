@@ -1,3 +1,0 @@
-* Snadno rozpoznáte každý aktivní čajový časovač podle jeho barvy.
-* Povolte delší názvy čajů.
-* Aktualizace překladů jazyků - přispějte přes Weblate!

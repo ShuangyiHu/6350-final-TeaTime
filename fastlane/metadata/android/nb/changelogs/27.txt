@@ -1,2 +1,0 @@
-* Støtte for Android 13-merknadstilgang.
-* Nye språkoppdateringer. Bidra på Hosted Weblate.

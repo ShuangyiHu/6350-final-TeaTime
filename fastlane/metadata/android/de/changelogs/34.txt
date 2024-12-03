@@ -1,3 +1,0 @@
-- Identifizieren Sie jede aktive Tee-Zeitschaltuhr jetzt leicht anhand ihrer Farbe.
-- Erlauben Sie längere Teenamen.
-- Aktualisierungen der Sprachübersetzung - tragen Sie über Weblate bei!

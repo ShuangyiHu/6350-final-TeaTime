@@ -1,4 +1,0 @@
-* Add more than 3 custom teas in Cuppa Preferences.
-* Change the order of your tea buttons.
-* Improved graphics quality.
-* Language translation updates - contribute via Weblate!

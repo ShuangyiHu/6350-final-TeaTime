@@ -1,3 +1,0 @@
-* Ny innstillingsside
-* Lagre dine egne tenavn, trekketider, og farger.
-* Lagre innstillinger for tre forskjellige teer.

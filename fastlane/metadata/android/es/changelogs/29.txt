@@ -1,2 +1,0 @@
-* Corrección de fallos en dispositivos plegables
-* icono monocromo mejorado

@@ -1,3 +1,0 @@
-* Cuppa 9 yeni dile çevrildi - Weblate ile katkıda bulunun!
-* Bir dakikadan az sürede demlenen çayları zamanlayın.
-* Çeşitli küçük kullanıcı arayüzü iyileştirmeleri ve hata düzeltmeleri.

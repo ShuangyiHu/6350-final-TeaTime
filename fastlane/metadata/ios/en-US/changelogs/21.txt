@@ -1,5 +1,0 @@
-* Fixed a bug with notification sounds while app was in the foreground.
-* Louder notification sound.
-* New option: choose your preferred language.
-* Usability and interface tweaks.
-* Language translation updates - contribute via Weblate!

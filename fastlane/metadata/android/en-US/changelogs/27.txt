@@ -1,2 +1,0 @@
-* Support Android 13 notification permission.
-* Language translation updates - contribute via Weblate!

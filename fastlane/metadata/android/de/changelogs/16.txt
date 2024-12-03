@@ -1,3 +1,0 @@
-* Cuppa wurde in 9 neue Sprachen übersetzt - tragen Sie über Weblate bei!
-* Tees, die weniger als eine Minute ziehen.
-* Verschiedene kleine Verbesserungen der Benutzeroberfläche und Fehlerbehebungen.

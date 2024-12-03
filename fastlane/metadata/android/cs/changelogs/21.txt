@@ -1,4 +1,0 @@
-* Hlasitější zvuk upozornění.
-* Nová možnost: vyberte si preferovaný jazyk.
-* Vylepšení použitelnosti a rozhraní.
-* Aktualizace překladů – přispějte přes Weblate!

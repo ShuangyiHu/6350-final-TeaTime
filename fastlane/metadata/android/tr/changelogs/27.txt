@@ -1,2 +1,0 @@
-* Android 13 bildirim izni desteği.
-* Dil çeviri güncellemeleri - Weblate ile katkıda bulunun!

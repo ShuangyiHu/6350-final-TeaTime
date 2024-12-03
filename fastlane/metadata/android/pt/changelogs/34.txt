@@ -1,3 +1,0 @@
-* Identifique facilmente cada timer de chá ativo por sua cor.
-* Permita nomes de chá mais longos.
-* Atualizações de tradução de idiomas - contribua via Weblate!

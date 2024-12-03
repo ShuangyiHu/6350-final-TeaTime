@@ -1,3 +1,0 @@
-* Her etkin çay sayacını rengine göre kolayca tanımlayın.
-* Daha uzun çay adlarına izin ver.
-* Dil çeviri güncellemeleri - Weblate ile katkıda bulunun!

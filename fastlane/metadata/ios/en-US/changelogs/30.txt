@@ -1,3 +1,0 @@
-* New pure black Dark Theme.
-* Usability and interface tweaks.
-* Language translation updates - contribute via Weblate!

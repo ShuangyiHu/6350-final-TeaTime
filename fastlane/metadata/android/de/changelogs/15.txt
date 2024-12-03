@@ -1,3 +1,0 @@
-* Eine neue Einstellungsseite!
-* Legen Sie Ihre eigenen Teenamen, Brühzeiten und Farben fest.
-* Speichern Sie die Einstellungen für drei verschiedene Tees.

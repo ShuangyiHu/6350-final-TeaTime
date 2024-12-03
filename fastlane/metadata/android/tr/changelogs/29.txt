@@ -1,2 +1,0 @@
-* katlanabilir aygıtlarda çökme düzeltildi
-* tek renkli simge iyileştirildi

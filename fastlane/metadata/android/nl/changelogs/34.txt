@@ -1,3 +1,0 @@
-[NIEUW] Herken een actieve theewekker op basis van de kleur;
-[VERBETERD] Voortaan zijn langere theenamen mogelijk;
-* [VERBETERD] Bijgewerkte vertalingen - draag ook bij via Weblate!
