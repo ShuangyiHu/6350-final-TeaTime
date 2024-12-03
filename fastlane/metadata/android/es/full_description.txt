@@ -1,0 +1,7 @@
+¡Cuppa para móviles finalmente está aquí! ¿Cansado de dejar tu té demasiado tiempo, para que se vuelva amargo y frío, o de beberlo demasiado pronto y no apreciar todo su potencial? ¡Entonces esta utilidad es para ti!
+
+Para hacer que la aplicación sea tan rápida y fácil que realmente la uses, la hemos creado pensando en la simplicidad. Simplemente abre la aplicación y toca el botón para el tipo de té que está preparando. Eso es todo. No es necesario navegar a través de menús complicados para encontrar un té en particular, o jugar con la configuración... a menos que desees personalizar los tiempos de preparación o agregar tus propios tés favoritos.
+
+Una vez que toques, Cuppa comenzará a cronometrar la infusión y verás que aparece una bolsita de té en la taza y se oscurecerá gradualmente a medida que el té se remoja. Un temporizador de cuenta regresiva muestra el tiempo restante. Puedes preparar hasta dos tés separados a la vez, cada uno con tu propio temporizador de cuenta regresiva. Cuando el té esté listo, Cuppa te avisará con una notificación; dependiendo de la configuración de tu dispositivo, esto puede ir acompañado de un sonido y/o vibración.
+
+¡Esperamos que Cuppa para tu móvil te resulte útil!

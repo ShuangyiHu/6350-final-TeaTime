@@ -1,0 +1,4 @@
+* Include water temperature setting for each tea.
+* Option to show extra brewing information on timer buttons.
+* Time teas that steep more than 10 minutes.
+* More languages and translation improvements - contribute via Weblate!
