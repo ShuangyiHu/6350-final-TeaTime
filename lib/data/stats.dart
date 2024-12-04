@@ -73,14 +73,14 @@ class Stat {
       statsColumnId: id,
       statsColumnName: name,
       statsColumnBrewTime: brewTime,
-      statsColumnBrewTemp: brewTemp,
-      statsColumnBrewAmount: (brewAmount * 10.0).toInt(),
-      statsColumnBrewAmountMetric: brewAmountMetric ? 1 : 0,
+      // statsColumnBrewTemp: brewTemp,
+      // statsColumnBrewAmount: (brewAmount * 10.0).toInt(),
+      // statsColumnBrewAmountMetric: brewAmountMetric ? 1 : 0,
       statsColumnColorShadeRed: colorShadeRed,
       statsColumnColorShadeGreen: colorShadeGreen,
       statsColumnColorShadeBlue: colorShadeBlue,
       statsColumnIconValue: iconValue,
-      statsColumnIsFavorite: isFavorite ? 1 : 0,
+      // statsColumnIsFavorite: isFavorite ? 1 : 0,
       statsColumnTimerStartTime: timerStartTime,
     };
   }
